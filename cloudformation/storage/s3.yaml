@@ -1,0 +1,33 @@
+#CloudFormation template format version.
+AWSTemplateFormatVersion: '2026-06-27' 
+
+#description that appears in the CloudFormation console.
+Description: S3 Bucket for Application Logs
+
+#AWS resource is defined here.
+Resources:
+
+  AppLogsBucket:
+
+    #This tells CloudFormation which AWS resource to create.
+    Type: AWS::S3::Bucket
+
+    Properties:
+
+      BucketName: nike-dev-app-logs-001
+
+      #Versioning protects against accidental overwrites or deletions and is commonly enabled in production.
+      VersioningConfiguration:
+
+        Status: Enabled
+
+      Tags:
+
+        - Key: Environment
+          Value: Development
+
+        - Key: Project
+          Value: Nike
+
+        - Key: Owner
+          Value: DevOps
