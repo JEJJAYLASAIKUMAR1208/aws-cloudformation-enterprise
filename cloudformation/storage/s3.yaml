@@ -16,7 +16,7 @@ Resources:
 
       BucketName: nike-dev-app-logs-001
 
-      Versioning protects against accidental overwrites or deletions and is commonly enabled in production.
+      #Versioning protects against accidental overwrites or deletions and is commonly enabled in production.
       VersioningConfiguration:
 
         Status: Enabled
