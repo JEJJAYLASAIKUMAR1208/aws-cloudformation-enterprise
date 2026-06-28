@@ -3,21 +3,20 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Installing dependencies"
+      - echo "Installing dependencies..."
 
-  build:
+  pre_build:
     commands:
       - echo "Validating CloudFormation template..."
       - aws cloudformation validate-template --template-body file://cloudformation/storage/s3.yaml
 
-  post_build:
+  build:
     commands:
-      - echo "Deploying CloudFormation stack..."
-      - aws cloudformation deploy \
-          --template-file cloudformation/storage/s3.yaml \
-          --stack-name nike-storage \
-          --capabilities CAPABILITY_NAMED_IAM
+      - echo "Build completed successfully."
 
 artifacts:
   files:
-    - '**/*'
+    - cloudformation/storage/s3.yaml
+    - cloudformation/master.yaml
+    - parameters/**/*.json
+  discard-paths: no
