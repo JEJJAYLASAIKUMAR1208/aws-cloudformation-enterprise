@@ -1,5 +1,5 @@
 #CloudFormation template format version.
-AWSTemplateFormatVersion: '2026-06-27' 
+AWSTemplateFormatVersion: '2010-09-09'
 
 #description that appears in the CloudFormation console.
 Description: S3 Bucket for Application Logs
